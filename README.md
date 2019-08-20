@@ -16,18 +16,13 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
 
 # Executable files
 (1) HLR_linkages.py:  Generate linkage hierarchies from input data set and extract feature matrix for regression model
-  -Inputs: 
-    'X.txt' - a (m-sample)x(n-dimensional) dataset that contains data with 1 or more clusters. For training purposes X must
-     contain multiple instances of clustered data e.g. X = [X1 X2 ... XK] where for the k-th instance, Xk is itself a (mk x n)
-     dimensional matrix
-    'ix.txt' - an ID label vector of length (m x n) corresponding to clustering instances in X. For the k-th instance, the label
-    has the value k applied to the mk samples in that instance
-  -Outputs:
-    'linkages.txt' - matrix containing linkage features for regression. Stored in "./$HLR/input/" 
-  -Parameters: 
-    'R' - internal parameter (which can be user adjusted) that sets number of bins used by the 2D histogram to generate feature 
-    matrix
- (2) 
+- Inputs: 
+    - 'X.txt' - a (m-sample)x(n-dimensional) dataset that contains data with 1 or more clusters. For training purposes X must contain multiple instances of clustered data e.g. X = [X1 X2 ... XK] where for the k-th instance, Xk is itself a (mk x n) dimensional matrix
+    - 'ix.txt' - an ID label vector of length (m x n) corresponding to clustering instances in X. For the k-th instance, the label has the value k applied to the mk samples in that instance
+    - Outputs: 'linkages.txt' - matrix containing linkage features for regression. Stored in "./$HLR/input/" 
+- Parameters: 
+    - 'R' - internal parameter (which can be user adjusted) that sets number of bins used by the 2D histogram to generate feature matrix
+(2) 
 
 # References
 [1] Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data. Submitted to PLOS One, Aug 2019
