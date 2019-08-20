@@ -24,7 +24,8 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
 - Outputs: 
     - 'linkages.txt' - matrix containing linkage features for regression. Saved to "./$HLR/input/" 
 - Parameters: 
-    - 'R' - internal parameter (which can be user adjusted) that sets number of bins used by the 2D histogram to generate feature matrix.
+    - 'R' - internal parameter (which can be user adjusted) that sets number of bins used by the 2D histogram to generate feature matrix
+
 (2) HLR_train.py: Train a regression model based on linkage hierarchies
 - Inputs: 
     - 'linkages.txt' - Loaded from "./$HLR/input/"
