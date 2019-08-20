@@ -1,6 +1,6 @@
 # Hierarchical-Linkage-Regression
 
-A blind method for estimating number of clusters in a multidimensional dataset. This is not a clustering algorithm, but allows inference of cluster number, which is often needed as an input to other automated clustering methods, and can be useful for data discovery.
+A blind method for estimating number of clusters in a multidimensional dataset. This is not a clustering algorithm, but enables inference of cluster number, which is often needed as an input to other automated clustering methods, and can be useful for data discovery.
 
 The method operates on the hypothesis that natural organization of data into clusters is reflected intrinsically in the hierarchical relationship of data points to one another upon partitioning of the dataset, and is therefore not dependent upon the specific values of the data, nor their absolute separations, but only on their relative ranking within the partitioned set. 
 
