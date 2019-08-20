@@ -25,11 +25,11 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
     - 'linkages.txt' - matrix containing linkage features for regression. Saved to "./$HLR/input/" 
 - Parameters: 
     - 'R' - internal parameter (which can be user adjusted) that sets number of bins used by the 2D histogram to generate feature matrix
-    - Parameters 'affinity' (i.e. distance metric) and 'linkage' from [agglomerative clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering)
+    - 'affinity' (i.e. distance metric) and 'linkage' from [agglomerative clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering)
 
 (2) HLR_train.py: Train a regression model based on linkage hierarchies
 - Inputs: 
-    - 'linkages.txt' - Loaded from "./$HLR/input/"
+    - 'linkages.txt' - loaded from "./$HLR/input/"
     - 'cx.txt' - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X. Loaded from "./$HLR/input/"
 - Outputs: 
     - 'regression_model.sav' - trained regression model. Saved to "./$HLR/model/" 
@@ -39,12 +39,16 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
 
 (3) HLR_test.py: Test a hierarchical linkage regression model
 - Inputs: 
-    - 'linkages.txt' - Loaded from "./$HLR/input/"
-    - 'cx.txt' - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X. Loaded from "./$HLR/input/"
+    - 'linkages.txt' - loaded from "./$HLR/input/"
+    - 'cx.txt' - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X Loaded from "./$HLR/input/"
 - Outputs: 
-    - 'output_test.txt' - test cluster number estimate paired with ground truth labels, sorted in ascending order. 
-- Parameters: 
-    - dependent on regression model used - see [scikit-learn documentation](https://scikit-learn.org/stable/documentation.html) for more information. Feedforward neural network and support vector machine implementations are provided in file
+    - 'output_test.txt' - test cluster number estimate paired with ground truth labels, sorted in ascending order. Saved to "./$HLR/output/" 
+
+(4) HLR_estimate.py: Estimate number of clusters in data set with unknown cluster number
+- Inputs: 
+    - 'linkages.txt' - loaded from "./$HLR/input/"
+- Outputs: 
+    - 'output.txt' - cluster number estimate. Saved to "./$HLR/output/" 
 
 ## References
 [1] Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data. Submitted to PLOS One, Aug 2019
