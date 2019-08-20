@@ -51,4 +51,4 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
     - 'output.txt' - cluster number estimate. Saved to "./$HLR/output/" 
 
 ## References
-[1] Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data. Submitted to PLOS One, Aug 2019
+[1] Zalay, O. Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data. Submitted to PLOS One, Aug 2019
