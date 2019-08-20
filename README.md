@@ -25,6 +25,7 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
     - 'linkages.txt' - matrix containing linkage features for regression. Saved to "./$HLR/input/" 
 - Parameters: 
     - 'R' - internal parameter (which can be user adjusted) that sets number of bins used by the 2D histogram to generate feature matrix
+    - Parameters 'affinity' (i.e. distance metric) and 'linkage' from [agglomerative clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering)
 
 (2) HLR_train.py: Train a regression model based on linkage hierarchies
 - Inputs: 
@@ -32,9 +33,18 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
     - 'cx.txt' - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X. Loaded from "./$HLR/input/"
 - Outputs: 
     - 'regression_model.sav' - trained regression model. Saved to "./$HLR/model/" 
-    - 'output_train.txt' - training model cluster number estimate paired with ground truth labels, sorted in ascending order
+    - 'output_train.txt' - training model cluster number estimate paired with ground truth labels, sorted in ascending order. Saved to "./$HLR/output/" 
 - Parameters: 
-    - dependent on regression model used - see [scikit-learn documentation](https://scikit-learn.org/stable/documentation.html) for more information. Feedforward neural network and support vector machine implementations of the regression are provided in file
+    - dependent on regression model used - see [scikit-learn documentation](https://scikit-learn.org/stable/documentation.html) for more information. [Feedforward neural network](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html#sklearn.neural_network.MLPRegressor) and [support vector machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR) implementations are provided in file
 
-# References
+(3) HLR_test.py: Test a hierarchical linkage regression model
+- Inputs: 
+    - 'linkages.txt' - Loaded from "./$HLR/input/"
+    - 'cx.txt' - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X. Loaded from "./$HLR/input/"
+- Outputs: 
+    - 'output_test.txt' - test cluster number estimate paired with ground truth labels, sorted in ascending order. 
+- Parameters: 
+    - dependent on regression model used - see [scikit-learn documentation](https://scikit-learn.org/stable/documentation.html) for more information. Feedforward neural network and support vector machine implementations are provided in file
+
+## References
 [1] Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data. Submitted to PLOS One, Aug 2019
