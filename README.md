@@ -17,7 +17,7 @@ This repository provides the basic code to perform hierarchical linkage regressi
 The code is written for Python 3, and has dependencies on the numpy, matplotlib, sklearn, pickle and joblib libraries. The project file structure necessitates creation of an "./$HLR" project directory, under which the program files are kept. The subdirectories of "./$HLR" must include "./$HLR/input/", "./$HLR/output/" and "./$HLR/model/".
 
 ## Executable files
-1. HLR_linkages.py:  Generate linkage hierarchies from input data set and extract feature matrix for regression model
+1. **HLR_linkages.py**:  Generate linkage hierarchies from input data set and extract feature matrix for regression model
 - Inputs: 
     - 'X.txt' - a (m-sample)x(n-dimensional) dataset that contains data with 1 or more clusters. For training purposes X must contain multiple instances of clustered data e.g. X = [X1 X2 ... XK] where for the k-th instance, Xk is itself a (mk x n) dimensional matrix. Loaded from "./$HLR/input/"
     - 'ix.txt' - an ID label vector of length (m x n) corresponding to clustering instances in X. For the k-th instance, the label has the value k applied to the mk samples in that instance. Loaded from "./$HLR/input/"
@@ -27,7 +27,7 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
     - 'R' - internal parameter (which can be user adjusted) that sets number of bins used by the 2D histogram to generate feature matrix
     - 'affinity' (i.e. distance metric) and 'linkage' from [agglomerative clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering)
 
-2. HLR_train.py: Train a regression model based on linkage hierarchies
+2. **HLR_train.py**: Train a regression model based on linkage hierarchies
 - Inputs: 
     - 'linkages.txt' - loaded from "./$HLR/input/"
     - 'cx.txt' - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X. Loaded from "./$HLR/input/"
@@ -37,14 +37,14 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
 - Parameters: 
     - dependent on regression model used - see [scikit-learn documentation](https://scikit-learn.org/stable/documentation.html) for more information. [Feedforward neural network](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html#sklearn.neural_network.MLPRegressor) and [support vector machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR) implementations are provided in file
 
-3. HLR_test.py: Test a hierarchical linkage regression model
+3. **HLR_test.py**: Test a hierarchical linkage regression model
 - Inputs: 
     - 'linkages.txt' - loaded from "./$HLR/input/"
     - 'cx.txt' - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X. Loaded from "./$HLR/input/"
 - Outputs: 
     - 'output_test.txt' - test cluster number estimate paired with ground truth labels, sorted in ascending order. Saved to "./$HLR/output/" 
 
-4. HLR_estimate.py: Estimate number of clusters in data set with unknown cluster number
+4. **HLR_estimate.py**: Estimate number of clusters in data set with unknown cluster number
 - Inputs: 
     - 'linkages.txt' - loaded from "./$HLR/input/"
 - Outputs: 
