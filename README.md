@@ -25,7 +25,15 @@ The code is written for Python 3, and has dependencies on the numpy, matplotlib,
     - 'linkages.txt' - matrix containing linkage features for regression. Saved to "./$HLR/input/" 
 - Parameters: 
     - 'R' - internal parameter (which can be user adjusted) that sets number of bins used by the 2D histogram to generate feature matrix
-(2) 
+(2) HLR_train.py: Train a regression model based on linkage hierarchies
+- Inputs: 
+    - 'linkages.txt' - Loaded from "./$HLR/input/"
+    - 'cx.txt' - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X. Loaded from "./$HLR/input/"
+- Outputs: 
+    - 'regression_model.sav' - trained regression model. Saved to "./$HLR/model/" 
+    - 'output_train.txt' - training model cluster number estimate paired with ground truth labels, sorted in ascending order
+- Parameters: 
+    - dependent on regression model used - see [scikit-learn.org documentation](https://scikit-learn.org/stable/documentation.html) for more information. Feedforward neural network and support vector machine implementations of the regression are provided in file
 
 # References
 [1] Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data. Submitted to PLOS One, Aug 2019
