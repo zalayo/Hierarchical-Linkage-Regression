@@ -19,45 +19,45 @@ The code is written for Python 3, and has external dependencies on the **numpy, 
 ## Executable files
 
 1. **HLRdata.py**: Generate randomly clustered dataset using random number generator. Clustering parameters and their descriptions are found in the header of the file. The parameters can be adjusted by the user to create a customized dataset.
-- Inputs:
-    - None
-- Outputs:
+- *Inputs*:
+    - **None**
+- *Outputs*:
     - **X.txt** - a (m-sample)x(n-dimensional) dataset that contains data with 1 or more clustering instances. For training purposes X must contain multiple instances of clustered data e.g. X = [X1 X2 ... XK] where for the k-th instance, Xk is itself a (m[k] x n) dimensional matrix containing one or more clusters. Saved to ./$HLR/input/
     - **kx.txt** - a label vector of length (m x n) corresponding to each of the K clustering instances in X. For the k-th instance, the label has the value k applied to the m[k] samples in that instance. Saved to ./$HLR/input/
     - **cx.txt** - a label vector of length (m x n) with unique label applied to each cluster in the k-th instance. The labels roll over for each new instance. Saved to ./$HLR/input/
     - **y.txt** - a vector of length K, corresponding to cluster number ground truth labels for the K clustering instances in X. Saved to ./$HLR/input/
     
 2. **HLRlinkages.py**:  Generate linkage hierarchies from input data set and extract feature matrix for regression model
-- Inputs: 
+- *Inputs*: 
     - **X.txt** -  Loaded from ./$HLR/input/
     - **kx.txt** - Loaded from ./$HLR/input/  (Note: user must provide the kx label vector if using their own source of data for X)
-- Outputs: 
+- *Outputs*: 
     - **linkages.txt** - matrix containing hierarchical linkage features for regression. Saved to ./$HLR/input/ 
-- Parameters: 
+- *Parameters*: 
     - **R** - parameter that sets number of bins used by the 2D histogram to generate feature matrix (default: R = 40)
     - **distance** and **linktype** (equivalent to 'affinity' and 'linkage' specified in [agglomerative clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering))
     
 3. **HLRtrain.py**: Train a regression model based on linkage hierarchies
-- Inputs: 
+- *Inputs*: 
     - **linkages.txt** - Loaded from ./$HLR/input/
     - **y.txt** - Loaded from ./$HLR/input/
-- Outputs: 
+- *Outputs*: 
     - **regression_model.sav** - trained regression model. Saved to "./$HLR/model/" 
     - **output_train.txt** - training model cluster number estimate paired with ground truth labels, sorted in ascending order. Saved to ./$HLR/output/ 
-- Parameters: 
+- *Parameters*: 
     - dependent on regression model used - see [scikit-learn documentation](https://scikit-learn.org/stable/documentation.html) for more information. [Feedforward neural network](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html#sklearn.neural_network.MLPRegressor) and [support vector machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR) implementations are provided, although the user is free to experiment with other regression models
 
 4. **HLRtest.py**: Test a hierarchical linkage regression model
-- Inputs: 
+- *Inputs*: 
     - **linkages.txt** - Loaded from ./$HLR/input/
     - **y.txt** - Loaded from ./$HLR/input/
-- Outputs: 
+- *Outputs*: 
     - **output_test.txt** - test cluster number estimate paired with ground truth labels, sorted in ascending order. Saved to ./$HLR/output/ 
 
 5. **HLRestimate.py**: Estimate number of clusters in data set with unknown cluster number
-- Inputs: 
+- *Inputs*: 
     - **linkages.txt** - loaded from ./$HLR/input/
-- Outputs: 
+- *Outputs*: 
     - **output.txt** - cluster number estimate. Saved to ./$HLR/output/ 
 
 ## References
