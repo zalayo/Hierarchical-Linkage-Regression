@@ -14,7 +14,7 @@ This repository provides the basic code to perform hierarchical linkage regressi
 
 ## Software and File Organization
 
-The code is written for Python 3, and has dependencies on the numpy, matplotlib, sklearn, pickle and joblib libraries. The project file structure necessitates creation of an "./$HLR" project directory, under which the program files are kept. The subdirectories of "./$HLR" must include "./$HLR/input/", "./$HLR/output/" and "./$HLR/model/".
+The code is written for Python 3, and has external dependencies on the **numpy, matplotlib, sklearn, pickle and joblib** libraries, as well as dependency on the project-specific **libHLR** module. The project file structure necessitates creation of an **./$HLR** project directory, under which the program files are kept. The subdirectories of ./$HLR must include **./$HLR/input/**, **./$HLR/output/** and **./$HLR/model/**. The ./$HLR/input/ directory serves as a working directory where executable programs will look for input files. It is recommended the user create separate storage folders to store data and files they do not want to be overwritten.
 
 ## Executable files
 1. **HLR_linkages.py**:  Generate linkage hierarchies from input data set and extract feature matrix for regression model
