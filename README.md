@@ -4,7 +4,7 @@ A blind method for estimating number of clusters in a multidimensional dataset.
 
 ## Background
 
-This is not a clustering algorithm, but enables estimation of the cluster number if unknown. The explicit value is often needed as an input parameter to other automated clustering methods, and can be useful for data discovery.
+This is not a clustering algorithm, but enables estimation of the cluster number of a dataset if not known *a priori*. The explicit value is often needed as an input parameter to other automated clustering methods, and can be useful for data discovery.
 
 The method operates on the hypothesis that natural organization of data into clusters is reflected intrinsically in the hierarchical relationship of data points to one another upon partitioning of the dataset, and is therefore not dependent upon the specific values of the data, nor their absolute separations, but only on their relative ranking within the partitioned set [1]. 
 
@@ -30,7 +30,7 @@ The code is written for Python 3, and has external dependencies on the **numpy, 
 2. **HLRlinkages.py**:  Generate linkage hierarchies from input data set and extract feature matrix for regression model
 - *Inputs*: 
     - **X.txt** -  Loaded from ./$HLR/input/
-    - **kx.txt** - Loaded from ./$HLR/input/  (Note: user must provide the kx label vector if using their own source of data for X)
+    - **kx.txt** - Loaded from ./$HLR/input/  (Note: user must provide the kx file of instance labels if using their own source of data for X, otherwise the software will assume X represents a single clustering instance)
 - *Outputs*: 
     - **linkages.txt** - matrix containing hierarchical linkage features for regression. Saved to ./$HLR/input/ 
 - *Parameters*: 
@@ -58,7 +58,11 @@ The code is written for Python 3, and has external dependencies on the **numpy, 
 - *Inputs*: 
     - **linkages.txt** - loaded from ./$HLR/input/
 - *Outputs*: 
-    - **output.txt** - cluster number estimate. Saved to ./$HLR/output/ 
+    - **output.txt** - cluster number estimate. Saved to ./$HLR/output/
+
+6. **HLRplot.py**: Visualization tool for plotting clustered data projected onto 3-dimensions. **This program requires execution from the COMMAND LINE or TERMINAL** using Python 3 (e.g. '>> python $(path to HLRplot.py)/HLRplot.py', or '>> python HLRplot.py' if executing from the program directory). The input data and labels are loaded from ./$HLR/input/. 
+
+The interactive program will prompt the user to first specify whether they want principal component analysis performed. Selecting the PCA option will plot the first 3 principal components (i.e. those with the largest covariance matrix eigenvalues), which sometimes allows for better visualization of individual clusters than the original dataset. The next prompt will ask which clustering instance to plot (ranging from 1 to K). Once the plot is closed, the user then has a choice to continue plotting other instances or exit the program.  
 
 ## References
 [1] Zalay, O. *Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data.* Submitted to PLOS One, Aug 2019
