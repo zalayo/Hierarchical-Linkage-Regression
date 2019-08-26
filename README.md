@@ -87,5 +87,9 @@ The code is written for Python 3, and has external dependencies on the **numpy, 
 - *Outputs*:
     - **None**
 
+## Example Files
+
+Examples of clustered random, image and text data are provided with associated data and label files in **example-randomdata.tar**, **example-imagedata.tar** and **example-textdata.tar**, respectively. A trained regression model using a 2-hidden layer feedforward neural network with relu activation function is provided as well (**regression-model.sav**). The clustered image and text data were obtained from publically available databases online. Details of how those data were sourced and processed to generate clusters is described in [1]. The text dataset contains an additional **wordlabels.txt** file that contains the word labels pertaining to each data point in the dataset.
+
 ## References
 [1] Zalay, O. *Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data.* Submitted to PLOS One, Aug 2019
