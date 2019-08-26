@@ -47,20 +47,32 @@ The code is written for Python 3, and has external dependencies on the **numpy, 
 - *Parameters*: 
     - dependent on regression model used - see [scikit-learn documentation](https://scikit-learn.org/stable/documentation.html) for more information. [Feedforward neural network](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html#sklearn.neural_network.MLPRegressor) and [support vector machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR) implementations are provided, although the user is free to experiment with other regression models
 
-4. **HLRtest.py**: Test a hierarchical linkage regression model
+4. **HLRtraingen.py**: Executable that combines random clustered data generation, linkage feature extraction and regression model training. User-settable parameters are found in file header.
+- *Inputs*: 
+    - **None**
+- *Outputs*:
+    - **X.txt** - Saved to ./$HLR/input/
+    - **kx.txt** - Saved to ./$HLR/input/
+    - **cx.txt** - Saved to ./$HLR/input/
+    - **y.txt** - Saved to ./$HLR/input/
+    - **linkages.txt** - Saved to ./$HLR/input/
+    - **regression_model.sav** - Saved to "./$HLR/model/" 
+    - **output_train.txt** - Saved to ./$HLR/output/
+
+5. **HLRtest.py**: Test a hierarchical linkage regression model
 - *Inputs*: 
     - **linkages.txt** - Loaded from ./$HLR/input/
     - **y.txt** - Loaded from ./$HLR/input/
 - *Outputs*: 
     - **output_test.txt** - test cluster number estimate paired with ground truth labels, sorted in ascending order. Saved to ./$HLR/output/ 
 
-5. **HLRestimate.py**: Estimate number of clusters in data set with unknown cluster number
+6. **HLRestimate.py**: Estimate number of clusters in data set with unknown cluster number
 - *Inputs*: 
     - **linkages.txt** - loaded from ./$HLR/input/
 - *Outputs*: 
     - **output.txt** - cluster number estimate. Saved to ./$HLR/output/
 
-6. **HLRplot.py**: Visualization tool for plotting clustered data projected onto 3-dimensions.
+7. **HLRplot.py**: Visualization tool for plotting clustered data projected onto 3-dimensions.
 
 - This program requires execution from the COMMAND LINE or TERMINAL using Python 3 
     - e.g. '>> python $(path to HLRplot.py)/HLRplot.py', or 
