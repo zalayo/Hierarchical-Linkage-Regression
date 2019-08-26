@@ -62,7 +62,10 @@ The code is written for Python 3, and has external dependencies on the **numpy, 
 
 6. **HLRplot.py**: Visualization tool for plotting clustered data projected onto 3-dimensions.
 
-- **This program requires execution from the COMMAND LINE or TERMINAL** using Python 3 (e.g. '>> python $(path to HLRplot.py)/HLRplot.py', or '>> python HLRplot.py' if executing from the program directory). The input data and labels are loaded from ./$HLR/input/. 
+- **This program requires execution from the COMMAND LINE or TERMINAL** using Python 3 
+    - e.g. '>> python $(path to HLRplot.py)/HLRplot.py', or 
+    
+    '>> python HLRplot.py' if executing from the program directory. The input data and labels are loaded from ./$HLR/input/. 
 
 - The interactive program will prompt the user to first specify whether they want principal component analysis performed. Selecting the PCA option will plot the first 3 principal components (i.e. those with the largest covariance matrix eigenvalues), which sometimes allows for better visualization of individual clusters than the original dataset. The next prompt will ask which clustering instance to plot (ranging from 1 to K). Once the plot is closed, the user then has a choice to continue plotting other instances or exit the program.  
 
