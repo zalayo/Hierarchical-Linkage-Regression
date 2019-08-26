@@ -68,13 +68,12 @@ The code is written for Python 3, and has external dependencies on the **numpy, 
     '       >> python HLRplot.py' if executing from the program directory. 
 
 - The interactive program will prompt the user to first specify whether they want principal component analysis performed. Selecting the PCA option will plot the first 3 principal components (i.e. those with the largest covariance matrix eigenvalues), which sometimes allows for better visualization of individual clusters than the original dataset. The next prompt will ask which clustering instance to plot (ranging from 1 to K). Once the plot is closed, the user then has a choice to continue plotting other instances or exit the program
-
 - *Inputs*:
     - **X.txt** - loaded from ./$HLR/input/
-    - **kx.txt** - loaded from ./$HLR/input/  (Note: user must provide the kx file of instance labels if using their own source of data for X, otherwise the software will assume X represents a single clustering instance)
+    - **kx.txt** - loaded from ./$HLR/input/ (Note: user must provide the kx file of instance labels if using their own source of data for X, otherwise the software will assume X represents a single clustering instance)
     - **cx.txt** - loaded from ./$HLR/input/ (Note: if cx.txt is unavailable then individual clusters will not be distinguished)
 - *Outputs*:
-    - **output.txt** - cluster number estimate. Saved to ./$HLR/output/
+    - **None**
 
 ## References
 [1] Zalay, O. *Blind method for inferring cluster number in multidimensional data sets by regression on linkage hierarchies generated from random data.* Submitted to PLOS One, Aug 2019
