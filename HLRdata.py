@@ -10,7 +10,7 @@ inputpath = './input/'
 ## Total number of clustering instances
 K = 100
 ## maximum number of clusters allowed per clustering instance:
-maxclust = 10
+maxclust = 30
 ## embedding dimension of data (i.e. feature dimensionality)
 dim = 50
 ## maximum span of cluster centers (applied to all axes):
@@ -26,7 +26,7 @@ sdu = 2.5
 ## minimum number of samples allowed per cluster
 minsamples = 10
 ## maximum number of samples allowed per cluster
-maxsamples = 100
+maxsamples = 500
 ################################################################################
 
 # seed random generator
